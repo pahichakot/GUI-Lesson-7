@@ -51,9 +51,39 @@ def get_user_choice(player_input):
     global computer_score, player_score
     
     computer_input = get_computer_choice()
+    user_selection.config(text = "You Selected : "+ player_input[0])
+    computer_selection.config(text = "Computer Selected : "+ computer_input[0])
 
+    #Tie - If Condition
+    if computer_input == player_input:
+        tie()
 
+    #Player selects Rock
+    if(player_input[1] == 0):
+        #Computer selects Paper
+        if(computer_input[1] == 1):
+            computer_wins()
+        #Computer selects Scissors
+        elif(computer_input[1] == 2):
+            user_wins()
 
+    #Player selects Paper
+    if(player_input[1] == 1):
+        #Computer selects Rock
+        if(computer_input[1] == 0):
+            user_wins()
+        #Computer selects Scissors
+        elif(computer_input[1] == 2):
+            computer_wins()
+
+    #Player selects Scissors
+    if(player_input[1] == 2):
+        #Computer selects Rock
+        if(computer_input[1] == 0):
+            computer_wins()
+        #Computer selects Paper
+        elif(computer_input[1] == 1):
+            user_wins()
 
 #Title - Label
 game_title = Label(root, text = "Rock, Paper, Scissors, SHOOT !", font = font.Font(size = 20), fg = "grey")
@@ -72,15 +102,15 @@ user_options = Label(frame, text = "Your Options", font = app_font, fg = "purple
 user_options.grid(row = 0, column = 0)
 
 #Rock - Button
-rock_btn = Button(frame, text = "Rock", bg = "pink", width = 15, pady = 5)
+rock_btn = Button(frame, text = "Rock", bg = "pink", width = 15, pady = 5, command = lambda: get_user_choice(options[0]))
 rock_btn.grid(row = 1, column = 1, padx = 8, pady = 5)
 
 #Paper - Button
-paper_btn = Button(frame, text = "Paper", bg = "silver", width = 15, pady = 5)
+paper_btn = Button(frame, text = "Paper", bg = "silver", width = 15, pady = 5, command = lambda: get_user_choice(options[1]))
 paper_btn.grid(row = 1, column = 2, padx = 8, pady = 5)
 
 #Scissors - Button
-scissors_btn = Button(frame, text = "Scissors", bg = "light blue", width = 15, pady = 5)
+scissors_btn = Button(frame, text = "Scissors", bg = "light blue", width = 15, pady = 5, command = lambda: get_user_choice(options[2]))
 scissors_btn.grid(row = 1, column = 3, padx = 8, pady = 5)
 
 #Score - Label
