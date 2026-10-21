@@ -79,7 +79,7 @@ rock_btn.grid(row = 1, column = 1, padx = 8, pady = 5)
 paper_btn = Button(frame, text = "Paper", bg = "silver", width = 15, pady = 5)
 paper_btn.grid(row = 1, column = 2, padx = 8, pady = 5)
 
-#Scissors
+#Scissors - Button
 scissors_btn = Button(frame, text = "Scissors", bg = "light blue", width = 15, pady = 5)
 scissors_btn.grid(row = 1, column = 3, padx = 8, pady = 5)
 
