@@ -27,7 +27,6 @@ def coin():
     winner_message = Label(root, text = ("Its " + str(side)), font = font.Font(size = 14), fg = "blue")
     winner_message.pack(pady = 10)
 
-
 #Flip Coin - Button
 flip_coin = Button(root, text = "Flip Coin", bg = "yellow", fg = "blue", width = 15, pady = 5, command = coin)
 flip_coin.pack(pady = 10)
